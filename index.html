@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=PT+Sans+Caption:wght@400;700&family=Pacifico&family=Righteous&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <section>
+      <div class="container p-4 my-3 d-flex flex-column align-items-center">
+        <h1>Bookmarker</h1>
+        <div
+          class="bookmark-box mt-4 w-100 pt-4 py-4 d-flex flex-column align-items-center"
+        >
+          <div class="subtitle">
+            <h3>
+              <span><i class="fa-solid fa-bookmark"></i></span> Bookmark your
+              favorite sites
+              <span><i class="fa-solid fa-bookmark fs-4"></i></span>
+            </h3>
+          </div>
+
+          <div class="mb-3 py-2 w-100">
+            <label for="BookmarkName" class="form-label"
+              ><i class="fa-solid fa-book-bookmark"></i> SiteName</label
+            >
+            <input
+              oninput="validationName()"
+              type="text"
+              class="form-control"
+              id="BookmarkName"
+              placeholder="Bookmark Name"
+            />
+            <div id="msgName"></div>
+          </div>
+          <div class="mb-3 py-2 w-100">
+            <div class="label">
+              <label for="SiteUrl" class="form-label"
+                ><i class="fa-solid fa-link"></i> Site URL</label
+              >
+            </div>
+
+            <input
+              oninput="validationUrl()"
+              type="text"
+              class="form-control"
+              id="SiteUrl"
+              placeholder="Website URL"
+            />
+          </div>
+          <button
+            onclick="addsite()"
+            id="btnSubmit"
+            class="btn btn-submit px-5"
+            type="submit"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="container">
+        <table class="table mt-4 text-center bg-light">
+          <thead>
+            <tr>
+              <th class="text-capitalize">index</th>
+              <th class="text-capitalize">Website Name</th>
+              <th class="text-capitalize">Visit</th>
+              <th class="text-capitalize">Delete</th>
+            </tr>
+          </thead>
+          <tbody id="tableContent"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <script
+      src="https://kit.fontawesome.com/0888b9421f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
